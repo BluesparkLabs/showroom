@@ -8,7 +8,7 @@ This Galleria Theme was designed to display rooms and rental properties for [Roo
 
 ### Requirements
 
-The showroom theme has been tested with [Galleria 1.3.3](http://galleria.io/static/galleria-1.3.3.zip).
+The showroom theme has been tested with [Galleria 1.3.3](http://galleria.io/static/galleria-1.3.3.zip) and is expected to work with the latest version as well.
 
 
 ### Installation
