@@ -1,0 +1,2 @@
+Galleria-Widescreen-Style
+=========================
