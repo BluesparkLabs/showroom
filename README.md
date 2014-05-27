@@ -5,6 +5,9 @@ A responsive widescreen slideshow theme for [Galleria.io](http://Galleria.io).
 
 This Galleria Theme was designed to display rooms and rental properties for [Roomify](http://Roomify.us), a Drupal-based booking engine for Hotels, BnBs, and Vacation Rentals.
 
+### Demo
+
+[View the demo](http://bluesparklabs.github.io/showroom/demo.html)
 
 ### Requirements
 
