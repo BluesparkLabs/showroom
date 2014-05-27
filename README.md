@@ -20,6 +20,41 @@ The showroom theme has been tested with [Galleria 1.3.3](http://galleria.io/stat
 * Download the Showroom Theme and expand it in the `themes` folder inside Galleria.
 * Read Galleria's documentation about [using themes](http://galleria.io/docs/themes/using_themes/) for further information.
 
+### Usage
+
+The Galleria Showroom Theme will work fine out-of-the-box with your existing Galleria slideshow, but to achieve the proper responsive functionality, you need to add two wrapper divs and the `galleria-content` class to the Galleria div itself as demonstrated here:
+
+<pre>
+    <b>&lt;div class="galleria-responsive"&gt;
+        &lt;div class="galleria-responsive-inside"&gt;</b>
+            &lt;div id="galleria" <b>class="galleria-content"</b>&gt;
+                &lt;a&gt;&lt;img ...&gt;&lt;/a&gt;
+                &lt;a&gt;&lt;img ...&gt;&lt;/a&gt;
+                &lt;a&gt;&lt;img ...&gt;&lt;/a&gt;
+            &lt;/div&gt;
+        <b>&lt;/div&gt;
+    &lt;/div&gt;</b>
+
+    &lt;script&gt;
+    // Load the showroom theme
+    Galleria.loadTheme('galleria.showroom.min.js');
+
+    // Initialize Galleria
+    Galleria.run('#galleria');
+    &lt;/script&gt;
+</pre>
+
+The responsive resizing is controled by specifying an aspect ratio in the CSS. The default aspect ratio, seen below, is set to the standard widescreen format of <code>16:9</code>, with the following CSS rule:
+
+    .galleria-responsive:before {
+        padding-bottom: 56.25%;
+    }
+
+
+The aspect ratio may be adjusted to any value in your site's CSS. The formula to calculate the value to use for the `padding-bottom` is:
+
+    height / width * 100%;
+
 
 ### Problems, Support, Feedback
 
