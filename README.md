@@ -7,7 +7,7 @@ This Galleria Theme was designed to display rooms and rental properties for [Roo
 
 ### Demo
 
-[View the responsive demo](http://bluesparklabs.github.io/showroom/demo.html).
+[View the responsive demo](http://bluesparklabs.github.io/showroom/).
 
 ### Requirements
 
