@@ -1,6 +1,6 @@
 /* Galleria Showroom Theme 2014-05-26 | https://raw.github.com/bluesparklabs/showroom/master/LICENSE | (c) Bluespark */
 
-#galleria-loader{height:1px!important}
+#galleria-loader{height:1px!important;}
 
 .galleria-container {
   position: relative;
@@ -15,22 +15,24 @@
 .galleria-stage {
   position: absolute;
   top: 0;
-  bottom: 90px;
+  bottom: 0; /* 90px; */
   left: 0;
   right: 0;
   overflow:hidden;
 }
 .galleria-thumbnails-container {
-  height: 75px;
+  height: 86px;
   bottom: 0;
+  left: 0;
+  right: 0;
   position: absolute;
-  left: 44px;
-  right: 44px;
+  padding-left: 44px;
+  padding-right: 44px;
   z-index: 2;
+  background: #fff;
 }
 .galleria-carousel .galleria-thumbnails-list {
-  /*margin-left: 30px;
-  margin-right: 30px;*/
+  padding: 12px 0;
 }
 .galleria-thumbnails .galleria-image {
   height: 75px;
@@ -48,20 +50,22 @@
   text-align: right;
   color: #fff;
   font: normal 11px/1 arial,sans-serif;
-  z-index: 1;
+  z-index: 3;
 }
 .galleria-loader {
-  background: #fff;
-  width: 20px;
-  height: 20px;
+  width: 26px;
+  height: 26px;
   position: absolute;
   top: 50%;
   right: 50%;
-  margin-top: -10px;
-  margin-right: -10px;
+  margin-top: -13px;
+  margin-right: -13px;
   z-index: 2;
   display: none;
-  background: url(loader.gif) no-repeat 2px 2px;
+  background: #000 url(loader.gif) no-repeat 50% 50%;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
 }
 .galleria-info {
   max-width: 50%;
@@ -129,10 +133,10 @@
   filter: alpha(opacity=100);
 }
 .galleria-image-nav {
-  position: absolute;
-  bottom: 0;
+  position: relative;
   width: 100%;
-  height: 90px;
+  height: 100%;
+  bottom: 0;
   left: 0;
 }
 .galleria-image-nav-left,
@@ -140,18 +144,17 @@
   opacity: .3;
   filter: alpha(opacity=30);
   cursor: pointer;
-  width: 62px;
-  height: 124px;
+  width: 45px;
+  height: 100%;
   position: absolute;
   left: 0;
-  z-index: 2;
-  background-position: 0 35px;
+  z-index: 3;
+  background-position: 7px 50%;
 }
 .galleria-image-nav-right {
   left: auto;
   right: 0;
-  background-position: -254px 35px;
-  z-index: 2;
+  background-position: -52px 50%;
 }
 .notouch .galleria-image-nav-left:hover,
 .notouch .galleria-image-nav-right:hover {
@@ -167,48 +170,44 @@
 .galleria-thumb-nav-right {
   cursor: pointer;
   display: none;
-  background-position: -495px 5px;
+  background-position: -200px 50%;
   position: absolute;
-  left: 0;
-  top: 0;
-  height: 40px;
-  width: 23px;
-  z-index: 3;
-  opacity: .8;
-  filter: alpha(opacity=80);
+  top: initial;
+  left: 44px;
+  bottom: 0;
+  height: 75px;
+  width: 44px;
+  z-index: 2;
+  opacity: 1;
+  filter: alpha(opacity=100);
+  display: block; /* Never show thumbnail nav */
+  -webkit-transition: opacity 0.35s ease-in-out;
+     -moz-transition: opacity 0.35s ease-in-out;
+      -ms-transition: opacity 0.35s ease-in-out;
+       -o-transition: opacity 0.35s ease-in-out;
+          transition: opacity 0.35s ease-in-out;
 }
 .galleria-thumb-nav-right {
-  background-position: -578px 5px;
+  background-position: -256px 50%;
   border-right: none;
-  right: 0;
+  right: 44px;
   left: auto;
 }
 .galleria-thumbnails-container .disabled {
-  opacity: .2;
-  filter: alpha(opacity=20);
+  display: none;
+  opacity: 0;
+  filter: alpha(opacity=0);
   cursor: default;
 }
-.notouch .galleria-thumb-nav-left:hover,
-.notouch .galleria-thumb-nav-right:hover {
-  opacity: 1;
-  filter: alpha(opacity=100);
-  background-color: #111;
-}
 .touch .galleria-thumb-nav-left:active,
-.touch .galleria-thumb-nav-right:active {
-  opacity: 1;
-  filter: alpha(opacity=100);
-  background-color: #111;
+.notouch .galleria-thumb-nav-left:hover {
+  background-position: -300px 50%;
+  background-color: #fff;
 }
-.notouch .galleria-thumbnails-container .disabled:hover {
-  opacity: .2;
-  filter: alpha(opacity=20);
-  background-color: transparent;
-}
-
-.galleria-carousel .galleria-thumb-nav-left,
-.galleria-carousel .galleria-thumb-nav-right {
-  /*display: block;*/
+.touch .galleria-thumb-nav-right:active,
+.notouch .galleria-thumb-nav-right:hover {
+  background-position: -356px 50%;
+  background-color: #fff;
 }
 .galleria-thumb-nav-left,
 .galleria-thumb-nav-right,
@@ -216,10 +215,101 @@
 .galleria-info-close,
 .galleria-image-nav-left,
 .galleria-image-nav-right {
-  background-image: url(sprite.png);
+  background-image: url(sprite.png?2);
   background-repeat: no-repeat;
 }
 .galleria-container.videoplay .galleria-info,
-.galleria-container.videoplay .galleria-counter{
-  display:none!important;
+.galleria-container.videoplay .galleria-counter{ display:none!important; }
+
+
+
+/** RESPONSIVE STYLES **/
+.galleria-responsive {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.galleria-responsive:before {
+  content: "";
+  display: block;
+  width: 100%;
+  padding-bottom: 56.25%; /* The slideshow will maintain this aspect ratio when resized. */
+  position: relative;
+}
+.galleria-responsive-inside {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+.galleria-responsive .galleria-content {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* Below this line are custom theme settings for when the galleria is responsive */
+.galleria-responsive .galleria-stage {
+  top: 0;
+}
+.galleria-responsive .galleria-thumbnails-container {
+  bottom: -100px;
+  -webkit-transition: bottom 0.35s ease-in-out;
+     -moz-transition: bottom 0.35s ease-in-out;
+      -ms-transition: bottom 0.35s ease-in-out;
+       -o-transition: bottom 0.35s ease-in-out;
+          transition: bottom 0.35s ease-in-out;
+}
+.galleria-responsive .galleria-image-nav-left,
+.galleria-responsive .galleria-image-nav-right {
+  -webkit-transition: background-position 0.35s ease-in-out;
+     -moz-transition: background-position 0.35s ease-in-out;
+      -ms-transition: background-position 0.35s ease-in-out;
+       -o-transition: background-position 0.35s ease-in-out;
+          transition: background-position 0.35s ease-in-out;
+}
+.galleria-responsive .galleria-image-nav-left {
+  background-position: 7px 50%;
+}
+.galleria-responsive .galleria-image-nav-right {
+  background-position: -52px 50%;
+}
+.galleria-responsive .galleria-info {
+  max-width: 100%;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+@media all and (min-width: 620px) {
+  .galleria-responsive .galleria-stage {
+    top: -100px;
+  }
+  .galleria-responsive .galleria-thumbnails-container {
+    bottom: 0;
+  }
+  .galleria-responsive .galleria-image-nav-left {
+    background-position: 7px 100%;
+  }
+  .galleria-responsive .galleria-image-nav-right {
+    background-position: -52px 100%;
+  }
+  .galleria-responsive .galleria-info {
+    bottom: 94px;
+    max-width: 50%;
+    left: 8px;
+  }
+}
+
+@media all and (min-width: 960px) {
+  .galleria-responsive .galleria-image-nav-left {
+    background-position: 0 100%;
+  }
+  .galleria-responsive .galleria-image-nav-right {
+    background-position: -45px 100%;
+  }
 }
