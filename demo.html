@@ -7,12 +7,24 @@
 
             /* Demo styles */
             html,body{background:#fff;margin:0;}
-            body{border-top:4px solid #000;}
-            .content{color:#777;font:12px/1.4 "helvetica neue",arial,sans-serif;max-width:960px;margin:20px auto;}
-            h1{font-size:12px;font-weight:normal;color:#444;margin:0;}
+            body{border-top:4px solid #002e65;}
+            .content{color:#777;font:14px/1.4 "helvetica neue",arial,sans-serif;max-width:960px;margin:20px auto;padding: 15px;}
+            h1{font-size:18px;font-weight:normal;color:#444;margin:0;}
+            h2{font-size:16px;font-weight:normal;color:#444;margin:2.5em 0 1em;}
             p{margin:0 0 20px}
-            a {color:#22BCB9;text-decoration:none;}
-            .cred{margin-top:20px;font-size:11px;}
+            a{color:#2266BB;text-decoration:none;}
+            a:hover,a:focus,a:active{text-decoration:underline;}
+            pre,code{color:#1F6AC4;background:#efefef;}
+            pre{
+                margin: 20px;
+                padding: 20px 0;
+                border-radius: 8px;
+            }
+            code {
+                border-radius: 4px;
+                padding: 0.1em 0.4em 0.3em;
+            }
+            .cred{margin-top:40px;padding-top:20px;border-top:1px solid #ccc;font-size:11px;}
 
             /* This rule is read by Galleria to define the gallery height: */
             .galleria-responsive:before { padding-bottom: 56.25%; }
@@ -29,7 +41,8 @@
 <body>
     <div class="content">
         <h1>Galleria Showroom Theme</h1>
-        <p>Demonstrating a basic gallery example.</p>
+        <p>A clean responsive theme for the <a href="http://galleria.io">Galleria</a> javascript slideshow.<br/>
+        <a href="http://github.com/BluesparkLabs/showroom">http://github.com/BluesparkLabs/showroom</a></p>
 
         <!-- The Galleria Showroom Theme requires two wrapper divs and an additional class for responsive layout functionality. -->
         <div class="galleria-responsive"><div class="galleria-responsive-inside">
@@ -110,10 +123,52 @@
             </a>
         </div>
 
-        </div>
+        </div></div>
+
+        <h2>Usage</h2>
+        <p>The Galleria Showroom Theme will work fine out-of-the-box with your existing Galleria slideshow, but to achieve the proper responsive functionality, you need to add two wrapper divs and the <code>galleria-content</code> class to the Galleria div itself as demonstrated here:</p>
+
+<pre>
+    <b>&lt;div class="galleria-responsive"&gt;
+        &lt;div class="galleria-responsive-inside"&gt;</b>
+            &lt;div id="galleria" <b>class="galleria-content"</b>&gt;
+                &lt;a&gt;&lt;img ...&gt;&lt;/a&gt;
+                &lt;a&gt;&lt;img ...&gt;&lt;/a&gt;
+                &lt;a&gt;&lt;img ...&gt;&lt;/a&gt;
+            &lt;/div&gt;
+        <b>&lt;/div&gt;
+    &lt;/div&gt;</b>
+
+    &lt;script&gt;
+    // Load the showroom theme
+    Galleria.loadTheme('galleria.showroom.min.js');
+
+    // Initialize Galleria
+    Galleria.run('#galleria');
+    &lt;/script&gt;
+</pre>
+
+        <p>The responsive resizing is controled by specifying an aspect ratio in
+        the CSS. The default aspect ratio, seen below, is set to the standard
+        widescreen format of <code>16:9</code>, with the following CSS rule:</p>
+
+<pre>
+    .galleria-responsive:before {
+        padding-bottom: 56.25%;
+    }
+</pre>
+
+        <p>The aspect ratio may be adjusted to any value in your site's CSS. The formula to calculate the value to use for the <code>padding-bottom</code> is:</p>
+
+<pre>
+    height / width * 100%;
+</pre>
 
         <p class="cred">The Galleria Slideshow Theme is a <a href="http://bluespark.com">Bluespark</a> production.</p>
+
     </div>
+
+    <a href="https://github.com/bluesparklabs/showroom"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
 
     <script>
 
