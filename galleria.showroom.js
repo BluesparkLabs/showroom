@@ -1,12 +1,10 @@
 /**
- * Galleria Showroom Theme 2014-05-26
- * http://galleria.io
+ * Galleria Showroom Theme
+ * http://bluesparklabs.github.io/showroom
  *
  * Licensed under the MIT license
  * https://raw.github.com/bluesparklabs/showroom/master/LICENSE
- *
  */
-
 (function($) {
 
 /*global window, jQuery, Galleria */
