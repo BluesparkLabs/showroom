@@ -34,29 +34,6 @@
   right: 0;
   overflow: hidden;
 }
-.galleria-thumbnails-container {
-  height: 86px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  position: absolute;
-  padding-left: 44px;
-  padding-right: 44px;
-  z-index: 2;
-  background: #fff;
-}
-.galleria-thumbnails-list {
-  padding: 12px 0;
-}
-.galleria-thumbnails .galleria-image {
-  height: 75px;
-  width: 116px;
-  background: #fff;
-  margin: 0 10px 0 0;
-  border: 1px solid #fff;
-  float: left;
-  cursor: pointer;
-}
 .galleria-counter {
   position: absolute;
   bottom: 10px;
@@ -146,6 +123,15 @@
   opacity: 1;
   filter: alpha(opacity=100);
 }
+.galleria-thumb-nav-left,
+.galleria-thumb-nav-right,
+.galleria-info-link,
+.galleria-info-close,
+.galleria-image-nav-left,
+.galleria-image-nav-right {
+  background-image: url(sprite.png?2);
+  background-repeat: no-repeat;
+}
 .galleria-image-nav {
   position: absolute;
   width: 100%;
@@ -180,8 +166,40 @@
   opacity: 1;
   filter: alpha(opacity=100);
 }
-.galleria-thumb-nav-left,
-.galleria-thumb-nav-right {
+/*
+THIS CODE ISNT NEEDED ANYMORE I THINK?
+.galleria-responsive .galleria-image-nav-left {
+  background-position: 7px 50%;
+}
+.galleria-responsive .galleria-image-nav-right {
+  background-position: -52px 50%;
+}*/
+
+.with-thumbnails .galleria-thumbnails-container {
+  height: 86px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  padding-left: 44px;
+  padding-right: 44px;
+  z-index: 2;
+  background: #fff;
+}
+.with-thumbnails .galleria-thumbnails-list {
+  padding: 12px 0;
+}
+.with-thumbnails .galleria-thumbnails .galleria-image {
+  height: 75px;
+  width: 116px;
+  background: #fff;
+  margin: 0 10px 0 0;
+  border: 1px solid #fff;
+  float: left;
+  cursor: pointer;
+}
+.with-thumbnails .galleria-thumb-nav-left,
+.with-thumbnails .galleria-thumb-nav-right {
   cursor: pointer;
   display: none;
   background-position: -200px 50%;
@@ -194,49 +212,44 @@
   z-index: 2;
   opacity: 1;
   filter: alpha(opacity=100);
-  display: block; /* Never show thumbnail nav */
   -webkit-transition: opacity 0.35s ease-in-out;
      -moz-transition: opacity 0.35s ease-in-out;
       -ms-transition: opacity 0.35s ease-in-out;
        -o-transition: opacity 0.35s ease-in-out;
           transition: opacity 0.35s ease-in-out;
 }
-.galleria-thumb-nav-right {
+.with-thumbnails .galleria-thumb-nav-right {
   background-position: -256px 50%;
   border-right: none;
   right: 44px;
   left: auto;
 }
-.galleria-thumbnails-container .disabled {
+.with-thumbnails .galleria-thumb-nav-left,
+.with-thumbnails .galleria-thumb-nav-right {
+  display: block;
+}
+.with-thumbnails .galleria-thumb-nav-left.disabled,
+.with-thumbnails .galleria-thumb-nav-right.disabled {
   display: none;
   opacity: 0;
   filter: alpha(opacity=0);
   cursor: default;
 }
-.touch .galleria-thumb-nav-left:active,
-.notouch .galleria-thumb-nav-left:hover {
+.with-thumbnails.touch .galleria-thumb-nav-left:active,
+.with-thumbnails.notouch .galleria-thumb-nav-left:hover {
   background-position: -300px 50%;
   background-color: #fff;
 }
-.touch .galleria-thumb-nav-right:active,
-.notouch .galleria-thumb-nav-right:hover {
+.with-thumbnails.touch .galleria-thumb-nav-right:active,
+.with-thumbnails.notouch .galleria-thumb-nav-right:hover {
   background-position: -356px 50%;
   background-color: #fff;
 }
-.galleria-thumb-nav-left,
-.galleria-thumb-nav-right,
-.galleria-info-link,
-.galleria-info-close,
-.galleria-image-nav-left,
-.galleria-image-nav-right {
-  background-image: url(sprite.png?2);
-  background-repeat: no-repeat;
-}
+
 .galleria-container.videoplay .galleria-info,
 .galleria-container.videoplay .galleria-counter{ display:none!important; }
 
-/* Below this line are custom theme settings for when the galleria is responsive */
-.galleria-responsive .galleria-thumbnails-container {
+.with-thumbnails .galleria-thumbnails-container {
   bottom: -100px;
   -webkit-transition: bottom 0.35s ease-in-out;
      -moz-transition: bottom 0.35s ease-in-out;
@@ -244,41 +257,104 @@
        -o-transition: bottom 0.35s ease-in-out;
           transition: bottom 0.35s ease-in-out;
 }
-.galleria-responsive .galleria-image-nav-left,
-.galleria-responsive .galleria-image-nav-right {
+.with-thumbnails .galleria-image-nav-left,
+.with-thumbnails .galleria-image-nav-right {
   -webkit-transition: background-position 0.35s ease-in-out;
      -moz-transition: background-position 0.35s ease-in-out;
       -ms-transition: background-position 0.35s ease-in-out;
        -o-transition: background-position 0.35s ease-in-out;
           transition: background-position 0.35s ease-in-out;
 }
-.galleria-responsive .galleria-image-nav-left {
-  background-position: 7px 50%;
-}
-.galleria-responsive .galleria-image-nav-right {
-  background-position: -52px 50%;
-}
-.galleria-responsive .galleria-info {
-  max-width: 100%;
-  width: 100%;
+
+.with-numeric-thumbnails .galleria-thumbnails-container {
+  position: absolute;
   bottom: 0;
+  width: 100%;
+  z-index: 2;
+  text-align: center;
+}
+.with-numeric-thumbnails .galleria-thumbnails-list,
+.with-numeric-thumbnails .galleria-thumbnails {
+  display: inline-block;
+}
+.with-numeric-thumbnails .galleria-thumb-nav-left,
+.with-numeric-thumbnails .galleria-thumb-nav-right,
+.with-numeric-thumbnails .galleria-thumbnails .galleria-image {
+  display: inline-block;
+  margin: 0 8px;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+}
+.with-numeric-thumbnails .galleria-thumbnails .galleria-image .img {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid #888;
+  background: #ccc;
+  text-indent: -9999em;
+}
+.with-numeric-thumbnails .galleria-thumbnails .galleria-image.active .img {
+  background: #fff;
+}
+.with-numeric-thumbnails .galleria-thumb-nav-left,
+.with-numeric-thumbnails .galleria-thumb-nav-right {
+  position: relative;
+  margin: 0 14px;
+}
+.with-numeric-thumbnails .galleria-thumb-nav-left.disabled,
+.with-numeric-thumbnails .galleria-thumb-nav-right.disabled {
+  display: none;
+}
+.with-numeric-thumbnails .galleria-thumb-nav-left:before,
+.with-numeric-thumbnails .galleria-thumb-nav-right:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  position: absolute;
+  top: -1px;
+}
+.with-numeric-thumbnails .galleria-thumb-nav-left:before {
+  border-right: 8px solid #ccc;
   left: 0;
+}
+.with-numeric-thumbnails .galleria-thumb-nav-right:after {
+  border-left: 8px solid #ccc;
+  right: 0;
+}
+.with-numeric-thumbnails .galleria-thumb-nav-left:hover:before {
+  border-right-color: #fff;
+}
+.with-numeric-thumbnails .galleria-thumb-nav-right:hover:after {
+  border-left-color: #fff;
+}
+
+@media all and (max-width: 619px) {
+  .galleria-responsive .galleria-info {
+    max-width: 100%;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+  }
 }
 
 @media all and (min-width: 620px) {
-  .galleria-responsive .galleria-stage {
+  .galleria-responsive.with-thumbnails .galleria-stage {
     top: -100px;
   }
-  .galleria-responsive .galleria-thumbnails-container {
+  .galleria-responsive.with-thumbnails .galleria-thumbnails-container {
     bottom: 0;
   }
-  .galleria-responsive .galleria-image-nav-left {
+  .galleria-responsive.with-thumbnails .galleria-image-nav-left {
     background-position: 7px 100%;
   }
-  .galleria-responsive .galleria-image-nav-right {
+  .galleria-responsive.with-thumbnails .galleria-image-nav-right {
     background-position: -52px 100%;
   }
-  .galleria-responsive .galleria-info {
+  .galleria-responsive.with-thumbnails .galleria-info {
     bottom: 94px;
     max-width: 50%;
     left: 8px;
@@ -286,10 +362,10 @@
 }
 
 @media all and (min-width: 960px) {
-  .galleria-responsive .galleria-image-nav-left {
+  .galleria-responsive.with-thumbnails .galleria-image-nav-left {
     background-position: 0 100%;
   }
-  .galleria-responsive .galleria-image-nav-right {
+  .galleria-responsive.with-thumbnails .galleria-image-nav-right {
     background-position: -45px 100%;
   }
 }

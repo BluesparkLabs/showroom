@@ -1,7 +1,7 @@
 {
   "name": "ShowroomGalleriaTheme",
   "description": "Showroom Galleria Theme",
-  "version": "1.0.0",
+  "version": "1.0.12",
   "licence": "MIT",
   "homepage": "https://bluesparklabs.github.io/showroom",
   "devDependencies": {
