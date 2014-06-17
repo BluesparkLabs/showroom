@@ -34,8 +34,8 @@ module.exports = function(grunt) {
         },
         options: {
           replacements: [{
-            pattern: /\.css/ig,
-            replacement: '.min.css'
+            pattern: /galleria\.showroom\.css/ig,
+            replacement: 'galleria.showroom.min.css'
           }]
         }
       }
