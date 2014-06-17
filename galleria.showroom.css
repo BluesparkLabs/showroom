@@ -282,18 +282,20 @@ THIS CODE ISNT NEEDED ANYMORE I THINK?
 .with-numeric-thumbnails .galleria-thumbnails .galleria-image {
   display: inline-block;
   margin: 0 8px;
-  height: 10px;
-  width: 10px;
-  border-radius: 50%;
+  -webkit-border-radius: 50%;
+     -moz-border-radius: 50%;
+          border-radius: 50%;
 }
 .with-numeric-thumbnails .galleria-thumbnails .galleria-image .img {
   display: inline-block;
   width: 10px;
   height: 10px;
-  border-radius: 50%;
+  text-indent: -9999em;
   border: 1px solid #888;
   background: #ccc;
-  text-indent: -9999em;
+  -webkit-border-radius: 50%;
+     -moz-border-radius: 50%;
+          border-radius: 50%;
 }
 .with-numeric-thumbnails .galleria-thumbnails .galleria-image.active .img {
   background: #fff;
