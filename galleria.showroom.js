@@ -17,6 +17,7 @@ Galleria.addTheme({
         initialTransition: 'fade',
         transition: 'slide',
         thumbCrop:  'height',
+        thumbnails: true,
 
         // Set this to false if you want to show the caption all the time:
         _toggleInfo: true
@@ -59,6 +60,13 @@ Galleria.addTheme({
         } else {
             info.show();
             this.$('info-link, info-close').hide();
+        }
+
+        // The presence of thumbnails may affect theming.
+        if (options.thumbnails === 'numbers') {
+            this.$('container').addClass('with-numeric-thumbnails');
+        } else if (options.thumbnails === false) {
+            this.$('container').addClass('no-thumbnails');
         }
 
         // Bind some stuff.
