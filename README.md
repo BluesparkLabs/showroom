@@ -22,18 +22,15 @@ The showroom theme has been tested with [Galleria 1.3.3](http://galleria.io/stat
 
 ### Usage
 
-The Galleria Showroom Theme will work fine out-of-the-box with your existing Galleria slideshow, but to achieve the proper responsive functionality, you need to add two wrapper divs and the `galleria-content` class to the Galleria div itself as demonstrated here:
+The Galleria Showroom Theme is responsive out-of-the-box:
 
 <pre>
-    <b>&lt;div class="galleria-responsive"&gt;
-        &lt;div class="galleria-responsive-inside"&gt;</b>
-            &lt;div id="galleria" <b>class="galleria-content"</b>&gt;
-                &lt;a&gt;&lt;img ...&gt;&lt;/a&gt;
-                &lt;a&gt;&lt;img ...&gt;&lt;/a&gt;
-                &lt;a&gt;&lt;img ...&gt;&lt;/a&gt;
-            &lt;/div&gt;
-        <b>&lt;/div&gt;
-    &lt;/div&gt;</b>
+
+    &lt;div id="galleria"&gt;
+        &lt;a&gt;&lt;img ...&gt;&lt;/a&gt;
+        &lt;a&gt;&lt;img ...&gt;&lt;/a&gt;
+        &lt;a&gt;&lt;img ...&gt;&lt;/a&gt;
+    &lt;/div&gt;
 
     &lt;script&gt;
     // Load the showroom theme
@@ -44,9 +41,9 @@ The Galleria Showroom Theme will work fine out-of-the-box with your existing Gal
     &lt;/script&gt;
 </pre>
 
-The responsive resizing is controled by specifying an aspect ratio in the CSS. The default aspect ratio, seen below, is set to the standard widescreen format of <code>16:9</code>, with the following CSS rule:
+The responsive resizing is controled by specifying an intrinsic aspect ratio in the CSS. The default aspect ratio, seen below, is set to the standard widescreen format of <code>16:9</code>, with the following CSS rule:
 
-    .galleria-responsive:before {
+    .galleria-container:before {
         padding-bottom: 56.25%;
     }
 

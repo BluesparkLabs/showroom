@@ -7,8 +7,6 @@
  */
 (function($) {
 
-/*global window, jQuery, Galleria */
-
 Galleria.addTheme({
     name: 'showroom',
     author: 'Galleria',
@@ -17,6 +15,12 @@ Galleria.addTheme({
         initialTransition: 'fade',
         transition: 'slide',
         thumbCrop:  'height',
+        // By default this slideshow is responsive; turning this off may have
+        // unintended consequences.
+        responsive: true,
+
+        // Set this to 'numbers' if you want to dots instead of thumbnail images,
+        // Set this to false to hide thumbnails completely.
         thumbnails: true,
 
         // Set this to false if you want to show the caption all the time:
@@ -25,6 +29,11 @@ Galleria.addTheme({
     init: function(options) {
 
         Galleria.requires(1.33, 'This version of the showroom theme requires Galleria 1.3.3 or later');
+
+        // Adjust certain elements when galleria is responsive.
+        if (options.responsive) {
+            this.$('container').addClass('galleria-responsive');
+        }
 
         // Add the caption info button and caption box close button elements.
         this.addElement('info-link','info-close');

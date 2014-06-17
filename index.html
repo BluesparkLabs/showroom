@@ -27,7 +27,7 @@
       .cred{margin-top:40px;padding-top:20px;border-top:1px solid #ccc;font-size:11px;}
 
       /* This rule is read by Galleria to define the gallery height: */
-      .galleria-responsive:before { padding-bottom: 56.25%; }
+      .galleria-container:before { padding-bottom: 56.25%; }
 
     </style>
 
@@ -44,11 +44,9 @@
     <p>A clean responsive theme for the <a href="http://galleria.io">Galleria</a> javascript slideshow.<br/>
     <a href="http://github.com/BluesparkLabs/showroom">http://github.com/BluesparkLabs/showroom</a></p>
 
-    <!-- The Galleria Showroom Theme requires two wrapper divs and an additional class for responsive layout functionality. -->
-    <div class="galleria-responsive"><div class="galleria-responsive-inside">
 
     <!-- Adding gallery images. We use resized thumbnails here for better performance, but it’s not necessary -->
-    <div id="galleria" class="galleria-content">
+    <div id="galleria">
       <a href="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Biandintz_eta_zaldiak_-_modified2.jpg/800px-Biandintz_eta_zaldiak_-_modified2.jpg">
         <img
           src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Biandintz_eta_zaldiak_-_modified2.jpg/100px-Biandintz_eta_zaldiak_-_modified2.jpg",
@@ -123,21 +121,15 @@
       </a>
     </div>
 
-    </div></div>
-
     <h2>Usage</h2>
-    <p>The Galleria Showroom Theme will work fine out-of-the-box with your existing Galleria slideshow, but to achieve the proper responsive functionality, you need to add two wrapper divs and the <code>galleria-content</code> class to the Galleria div itself as demonstrated here:</p>
+    <p>The Galleria Showroom Theme is now responsive out-of-the-box.</p>
 
 <pre>
-  <b>&lt;div class="galleria-responsive"&gt;
-    &lt;div class="galleria-responsive-inside"&gt;</b>
-      &lt;div id="galleria" <b>class="galleria-content"</b>&gt;
-        &lt;a&gt;&lt;img ...&gt;&lt;/a&gt;
-        &lt;a&gt;&lt;img ...&gt;&lt;/a&gt;
-        &lt;a&gt;&lt;img ...&gt;&lt;/a&gt;
-      &lt;/div&gt;
-    <b>&lt;/div&gt;
-  &lt;/div&gt;</b>
+  &lt;div id="galleria"&gt;
+    &lt;a&gt;&lt;img ...&gt;&lt;/a&gt;
+    &lt;a&gt;&lt;img ...&gt;&lt;/a&gt;
+    &lt;a&gt;&lt;img ...&gt;&lt;/a&gt;
+  &lt;/div&gt;
 
   &lt;script&gt;
   // Load the showroom theme
@@ -153,7 +145,7 @@
     widescreen format of <code>16:9</code>, with the following CSS rule:</p>
 
 <pre>
-  .galleria-responsive:before {
+  .galleria-container:before {
     padding-bottom: 56.25%;
   }
 </pre>
