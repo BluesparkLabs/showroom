@@ -2,8 +2,9 @@
  * Compress and package CSS and JS with Grunt.
  */
 module.exports = function(grunt) {
+  config = grunt.file.readJSON('package.json');
   grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json'),
+    pkg: config,
 
     // Minify css.
     cssmin: {
@@ -35,7 +36,7 @@ module.exports = function(grunt) {
         options: {
           replacements: [{
             pattern: /galleria\.showroom\.css/ig,
-            replacement: 'galleria.showroom.min.css'
+            replacement: 'galleria.showroom.min.css?v' + config.version
           }]
         }
       }
