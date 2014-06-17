@@ -72,10 +72,12 @@ Galleria.addTheme({
         }
 
         // The presence of thumbnails may affect theming.
-        if (options.thumbnails === 'numbers') {
-            this.$('container').addClass('with-numeric-thumbnails');
-        } else if (options.thumbnails === false) {
+        if (options.thumbnails === false) {
             this.$('container').addClass('no-thumbnails');
+        } else if (options.thumbnails === 'numbers') {
+            this.$('container').addClass('with-numeric-thumbnails');
+        } else {
+            this.$('container').addClass('with-thumbnails');
         }
 
         // Bind some stuff.
