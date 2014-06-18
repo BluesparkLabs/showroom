@@ -12,7 +12,6 @@
 .galleria-container {
   position: relative;
   overflow: hidden;
-  background: #fff;
 }
 .galleria-container:before {
   content: "";
@@ -166,14 +165,6 @@
   opacity: 1;
   filter: alpha(opacity=100);
 }
-/*
-THIS CODE ISNT NEEDED ANYMORE I THINK?
-.galleria-responsive .galleria-image-nav-left {
-  background-position: 7px 50%;
-}
-.galleria-responsive .galleria-image-nav-right {
-  background-position: -52px 50%;
-}*/
 
 .with-thumbnails .galleria-thumbnails-container {
   height: 86px;
@@ -266,6 +257,18 @@ THIS CODE ISNT NEEDED ANYMORE I THINK?
           transition: background-position 0.35s ease-in-out;
 }
 
+.with-numeric-thumbnails {
+  padding-bottom: 40px;
+}
+.with-numeric-thumbnails .galleria-stage {
+  bottom: 40px;
+}
+.with-numeric-thumbnails .galleria-image-nav-left {
+  background-position: 7px 45%;
+}
+.with-numeric-thumbnails .galleria-image-nav-right {
+  background-position: -52px 45%;
+}
 .with-numeric-thumbnails .galleria-thumbnails-container {
   position: absolute;
   bottom: 0;
